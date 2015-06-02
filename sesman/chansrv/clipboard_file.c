@@ -29,6 +29,7 @@
 #include "parse.h"
 #include "os_calls.h"
 #include "list.h"
+#include "sys/time.h"
 #include "chansrv.h"
 #include "clipboard.h"
 #include "clipboard_file.h"
