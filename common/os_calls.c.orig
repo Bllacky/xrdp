@@ -78,9 +78,6 @@
 
 /* for clearenv() */
 #if defined(_WIN32)
-#elif __APPLE__
-#include <crt_externs.h>
-#define environ *_NSGetEnviron();
 #else
 extern char **environ;
 #endif
@@ -2744,7 +2741,7 @@ g_execlp3(const char *a1, const char *a2, const char *a3)
 void APP_CC
 g_signal_child_stop(void (*func)(int))
 {
-#if defined(_WIN32) || defined(__APPLE__)
+#if defined(_WIN32)
 #else
     signal(SIGCHLD, func);
 #endif
@@ -2975,10 +2972,13 @@ g_waitpid(int pid)
 void APP_CC
 g_clearenv(void)
 {
-#if defined(_WIN32) || defined(__APPLE__)
-    //environ[0] = 0;
+#if defined(_WIN32)
+#else
+#if defined(BSD)
+    environ[0] = 0;
 #else
     environ = 0;
+#endif
 #endif
 }
 
