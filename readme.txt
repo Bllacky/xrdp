@@ -1,3 +1,23 @@
+To install on OSX 10.10 (don't know about earlier versions).
+
+First you need to compile or install:
+autoconf
+automake
+gettext
+libtool
+tree
+
+I used the port repository to get the above libraries.
+
+Second you need to run:
+./bootstrap
+./configure -prefix=/usr -sysconfdir=/etc -localstatedir=/var CFLAGS="-m32 -mmacosx-version-min=10.9"
+make
+sudo make install
+
+For configuration and other information please check this link:
+http://forums.macrumors.com/threads/how-to-control-your-mac-using-win-rdp-client-xrdp-compiling-guide-on-osx.1770325/
+Credits go to coozoo .
 
 xrdp 0.9.0
 
