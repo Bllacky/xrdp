@@ -176,7 +176,7 @@ mysend(int sck, const void* adata, int bytes)
     {
         if (can_send(sck, 100))
         {
-            error = send(sck, data + sent, bytes - sent, MSG_NOSIGNAL);
+            error = send(sck, data + sent, bytes - sent, SO_NOSIGPIPE);
             if (error < 1)
             {
                 return -1;
