@@ -9,6 +9,8 @@ tree
 
 I used the port repository to get the above libraries.
 
+If you have trouble with the libraries, you probably need to make some links to the appropriate folders.
+
 Second you need to run:
 ./bootstrap
 ./configure -prefix=/usr -sysconfdir=/etc -localstatedir=/var CFLAGS="-m32 -mmacosx-version-min=10.9"
