@@ -59,3 +59,39 @@ make install
 see file-loc.txt to see what files are installed where
 
 Jay Sorg
+
+After you the "make install" command has ran succesfully, you need to edit xrdp.ini
+There seems to be a pathing issue with xrdp. Not sure why.
+
+In xrdp.ini
+Found in /etc/xrdp/
+
+You need to set:
+[global]
+max_bpp=24
+
+for the connection you need to change in xrdp.ini the first entry to
+
+[xrdp1]
+name=sesman-Xvnc
+lib=libvnc.0.dylib
+username=na
+password=Remote Management password you set on the native OS X VNC server
+ip=127.0.0.1
+port=5900
+
+Now, you need to go to 
+/usr/lib/xrdp and copy
+
+libvnc.0.dylib
+
+to /usr/lib
+
+start xrdp from /etc/xrdp with
+sudo bash xrdp.sh
+
+finally start Remote Management servers in OS X and set your desired password.
+
+enjoy!
+
+
