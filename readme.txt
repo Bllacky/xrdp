@@ -93,5 +93,6 @@ sudo bash xrdp.sh
 finally start Remote Management servers in OS X and set your desired password.
 
 enjoy!
+Silviu Tanasie
 
 
